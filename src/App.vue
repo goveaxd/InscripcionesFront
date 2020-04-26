@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Este es el proyecto que vamos a hacer algún dia no muy lejano jajaja, eso espero, HOLA AMIGUITOS"/>
+    <HelloWorld msg="Este es el proyecto que vamos a hacer algún dia no muy lejano jajaja, eso espero, HOLA AMIGUITOSXD"/>
   </div>
 </template>
 

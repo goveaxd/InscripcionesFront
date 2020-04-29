@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
-     <div>
+
+    <!--MENU-->
+    <div>
   <b-navbar class="m" toggleable="lg" type="dark" variant="primary" >
     <b-navbar-brand href="#">ITLP</b-navbar-brand>
 
@@ -37,31 +38,10 @@
     </b-collapse>
   </b-navbar>
 </div>
-    <cMaterias></cMaterias>
-
-  </div>
 </template>
 
 <script>
-import menu from '@/components/menu'
-import cDocentes from '@/components/consultarDocentes'
-import cMaterias from '@/components/consultarMateriasPCarrera'
-
 export default {
-  name: 'App',
-  components: {
-    menu,cDocentes,cMaterias
-  }
+    
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

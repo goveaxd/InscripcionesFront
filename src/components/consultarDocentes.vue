@@ -1,4 +1,5 @@
 <template>
+
     <div>
         <br>
         <h1><strong> DOCENTES </strong></h1>
@@ -23,22 +24,30 @@
 
 <br>
 <div>
+  
+ 
     <b-table striped hover :items="items"></b-table>
   </div>
     </div>    
 </template>
 
 <script>
+import axios from "axios";
 export default {
     data() {
       return {
         items: [
-          {Nombre: 'El Heris', RFC: 'HX7SWD7D' },
+          {Nombre: 'HERIS', RFC: 'HX7SWD7D' },
           {Nombre: 'Estela', RFC: 'JC7SD8AS' },
           {Nombre: 'Laura Elena', RFC: 'SIDNCW322' },
           {Nombre: 'Teresita', RFC: 'M7D6S6S' }
         ]
       }
-    }
+    },
+    created() {
+    axios.get("http://localhost:8181/tec/docente").then((result) => {
+      this.result = result.data;
+    })
+  }
 }
 </script>

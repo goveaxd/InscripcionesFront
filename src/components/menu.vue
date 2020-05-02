@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
-     <div>
+
+    <!--MENU-->
+    <div>
   <b-navbar class="m" toggleable="lg" type="dark" variant="primary" >
     <b-navbar-brand href="#">ITLP</b-navbar-brand>
 
@@ -10,8 +11,6 @@
       <b-navbar-nav>
         <b-nav-item href="#">Inicio</b-nav-item>
         <b-nav-item href="#">Reinscripción</b-nav-item>
-        <b-nav-item href="#">Kardex</b-nav-item>
-        <b-nav-item href="#">Carga Academica</b-nav-item>
        
       </b-navbar-nav>
 
@@ -39,42 +38,10 @@
     </b-collapse>
   </b-navbar>
 </div>
-    <cDocentes></cDocentes>
-
-
-  </div>
 </template>
 
 <script>
-import menu from '@/components/menu'
-import cDocentes from '@/components/consultarDocentes'
-import cMaterias from '@/components/consultarMateriasPCarrera'
-
-import kardex from '@/components/kardex.vue'
-
-
 export default {
-  name: 'App',
-  components: {
-
-    menu,cDocentes,cMaterias,kardex
-
-  }
+    
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-#navbar{
-  margin-top: -60px;
-  background-color: #1D2F62;
-}
-</style>

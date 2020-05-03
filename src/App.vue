@@ -12,6 +12,7 @@
         <b-nav-item href="#">Reinscripción</b-nav-item>
         <b-nav-item href="#">Kardex</b-nav-item>
         <b-nav-item href="#">Carga Academica</b-nav-item>
+        <b-nav-item href="#">Horario</b-nav-item>
        
       </b-navbar-nav>
 
@@ -39,7 +40,7 @@
     </b-collapse>
   </b-navbar>
 </div>
-    <cDocentes></cDocentes>
+    <horario></horario>
 
 
   </div>
@@ -49,6 +50,7 @@
 import menu from '@/components/menu'
 import cDocentes from '@/components/consultarDocentes'
 import cMaterias from '@/components/consultarMateriasPCarrera'
+import horario from '@/components/horario'
 
 import kardex from '@/components/kardex.vue'
 
@@ -57,7 +59,7 @@ export default {
   name: 'App',
   components: {
 
-    menu,cDocentes,cMaterias,kardex
+    menu,cDocentes,cMaterias,kardex, horario
 
   }
 }

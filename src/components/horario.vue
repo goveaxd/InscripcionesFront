@@ -18,7 +18,7 @@
                 <b-col>Ing Tecnologias de la Informacion y Comunicaciones</b-col>
               </b-row>
               <br>
-              <h1><strong> HORARIO </strong></h1>
+              <h1><strong> HORARIO ! </strong></h1>
                  <div class="mt-5">
               <b-table striped hover :items="items"></b-table>
                  </div>

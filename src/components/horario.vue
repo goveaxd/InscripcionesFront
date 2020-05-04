@@ -18,12 +18,20 @@
                 <b-col>Ing Tecnologias de la Informacion y Comunicaciones</b-col>
               </b-row>
               <br>
-              <h1><strong> HORARIO </strong></h1>
+              <h1><strong> HORARIO ! </strong></h1>
                  <div class="mt-5">
               <b-table striped hover :items="items"></b-table>
                  </div>
+              
+               <div class="mt-5" >
+                 <thead class="thead-dark">
+              <b-table striped hover :items="item"></b-table>
+                 </thead>
+                 </div>
             </b-container> 
             
+            
+
 </div>
 
 
@@ -44,6 +52,17 @@
               {HORA: '12:00 - 13:00', LUNES:'Etica', MARTES:'Front-End II', MIERCOLES:'Etica', JUEVES:'Front-End II', VIERNES:'Etica'},
               {HORA: '13:00 - 14:00', LUNES:'Front-End II', MARTES:'', MIERCOLES:'Back-End', JUEVES:'Back-End', VIERNES:''},
               {HORA: '14:00 - 15:00', LUNES:'Front-End II', MARTES:'Back-End', MIERCOLES:'Back-End', JUEVES:'', VIERNES:'Back-End'},
+            ],
+            item:[
+              {Creditos:'2-3-5', Clave:'DER85', Materia:'Base de Datos', Docente:'Ma. Estela Romero Fuentes'},
+              {Creditos:'1-4-5', Clave:'RC5D5', Materia:'DevOps', Docente:'Heriberto Flores Chavez'},
+              {Creditos:'2-2-4', Clave:'RFE85', Materia:'Ing Software', Docente:'Ma. Estela Romero Fuentes'},
+              {Creditos:'3-2-5', Clave:'FR52D', Materia:'Programación II', Docente:'Margarita Torres Figueroa'},
+              {Creditos:'3-2-5', Clave:'DD252', Materia:'Back-End', Docente:'Heriberto Flores Chavez'},
+              {Creditos:'2-3-5', Clave:'FFF25', Materia:'Front-End II', Docente:'Rosa Isela Ponce del Campo'},
+              {Creditos:'2-2-4', Clave:'CVD55', Materia:'Telecomunicaciones', Docente:'Maria Teresa Pichardo'},
+              {Creditos:'1-3-4', Clave:'AZX44', Materia:'Ética', Docente:'Laura Elena Chulim'}
+            
             ]
           }
         }

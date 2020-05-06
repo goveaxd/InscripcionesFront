@@ -23,7 +23,11 @@
 </div>
 
 <br>
-<div>
+<div v-if="result" class="content">
+  {{result.nombre}}
+  consultaDocentes();
+</div>
+<div >
   
  
     <b-table striped hover :items="items"></b-table>
@@ -34,20 +38,25 @@
 <script>
 import axios from "axios";
 export default {
-    data() {
-      return {
+    data:() => ({
+        result:{},
         items: [
           {Nombre: 'HERIS', RFC: 'HX7SWD7D' },
           {Nombre: 'Estela', RFC: 'JC7SD8AS' },
           {Nombre: 'Laura Elena', RFC: 'SIDNCW322' },
           {Nombre: 'Teresita', RFC: 'M7D6S6S' }
         ]
-      }
-    },
-    created() {
-    axios.get("http://localhost:8181/tec/docente").then((result) => {
-      this.result = result.data;
-    })
+      
+    }),
+    methods:{
+    async consultaDocentes() {
+      try{
+    this.result = await axios.get("http://localhost:8181/tec/docente")
+    console.log(this.result.status)
+  } catch(error) {
+    console.log(error)
   }
+    }
+    }
 }
 </script>

@@ -39,7 +39,7 @@
     </b-collapse>
   </b-navbar>
 </div>
-    <cDocentes></cDocentes>
+    <kardex></kardex>
 
 
   </div>

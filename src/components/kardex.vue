@@ -22,16 +22,29 @@
 </template>
 
 <script>
- export default {
-    data() {
-      return {
-        items: [
-          { Semestre: 1, Materia: 'Matematicas Discretas I', Clave_Materia: 'ASDF785JKL', Calificacion:'90' },
-          { Semestre: 3, Materia: 'Matematicas aplicadas a las comunicaciones', Clave_Materia: 'RG5678',  Calificacion:'78' },
-          { Semestre: 5, Materia: 'Bases de datos distribuidas', Clave_Materia: 'LKJHG4567',  Calificacion:'97' },
-          { Semestre: 7, Materia: 'Programacion Back-End', Clave_Materia: 'MNBV8524',  Calificacion:'84' }
-        ]
-      }
-    }
+import axios from "axios";
+export default {
+    data:() => ({
+        result:[],
+      
+    }),
+    created(){
+     // invocar los métodos
+     this.consultaDocentes();
+    },
+    methods:{
+    async consultaDocentes() {
+      try{
+    this.result = await axios.get("http://localhost:8181/tec/docente")
+    console.log(this.result.data)
+    console.log(this.result.status)
+    
+
+
+  } catch(error) {
+    console.log(error)
   }
+    }
+    }
+}
 </script>

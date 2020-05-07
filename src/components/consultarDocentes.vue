@@ -27,7 +27,7 @@
 <div >
   
  
-    <b-table busy.sync="true" striped hover :items="result" :fields="items"></b-table>
+    <b-table v-for="(item, index) in result" :key="index" striped hover :items="item" :fields="items"></b-table>
   </div>
     </div>    
 </template>
@@ -56,7 +56,7 @@ export default {
     this.result = await axios.get("http://localhost:8181/tec/docente")
     console.log(this.result.data)
     console.log(this.result.status)
-    console.log(Object.values(this.result.data))   
+    
 
 
   } catch(error) {

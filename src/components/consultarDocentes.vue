@@ -23,14 +23,11 @@
 </div>
 
 <br>
-<div v-if="result" class="content">
-  {{result.nombre}}
-  consultaDocentes();
-</div>
+
 <div >
   
  
-    <b-table striped hover :items="items"></b-table>
+    <b-table busy.sync="true" striped hover :items="result" :fields="items"></b-table>
   </div>
     </div>    
 </template>
@@ -39,20 +36,29 @@
 import axios from "axios";
 export default {
     data:() => ({
-        result:{},
+        result:[],
         items: [
-          {Nombre: 'HERIS', RFC: 'HX7SWD7D' },
-          {Nombre: 'Estela', RFC: 'JC7SD8AS' },
-          {Nombre: 'Laura Elena', RFC: 'SIDNCW322' },
-          {Nombre: 'Teresita', RFC: 'M7D6S6S' }
+          {key: 'iddocente', sortable: true },
+          {key: 'nombre', sortable: true },
+          {key: 'apellido', sortable: true },
+          {key: 'RFC', sortable: true },
+          {key: 'mail', sortable: true }
         ]
       
     }),
+    created(){
+     // invocar los métodos
+     this.consultaDocentes();
+    },
     methods:{
     async consultaDocentes() {
       try{
     this.result = await axios.get("http://localhost:8181/tec/docente")
+    console.log(this.result.data)
     console.log(this.result.status)
+    console.log(Object.values(this.result.data))   
+
+
   } catch(error) {
     console.log(error)
   }

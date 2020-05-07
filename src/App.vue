@@ -46,9 +46,10 @@
 </template>
 
 <script>
-import menu from '@/components/menu'
+
 import cDocentes from '@/components/consultarDocentes'
 import cMaterias from '@/components/consultarMateriasPCarrera'
+import prueba from '@/components/prueba'
 
 import kardex from '@/components/kardex.vue'
 
@@ -57,7 +58,7 @@ export default {
   name: 'App',
   components: {
 
-    menu,cDocentes,cMaterias,kardex
+    cDocentes,cMaterias,kardex,prueba
 
   }
 }

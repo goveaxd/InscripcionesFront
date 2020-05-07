@@ -25,8 +25,6 @@
 <br>
 
 <div >
-  
- 
     <b-table v-for="(item, index) in result" :key="index" striped hover :items="item" ></b-table>
   </div>
     </div>    
@@ -37,14 +35,6 @@ import axios from "axios";
 export default {
     data:() => ({
         result:[],
-        items: [
-          {key: 'iddocente', sortable: true },
-          {key: 'nombre', sortable: true },
-          {key: 'apellido', sortable: true },
-          {key: 'RFC', sortable: true },
-          {key: 'mail', sortable: true },
-          {key: 'departamento_iddepartamento', sortable: true} 
-        ]
       
     }),
     created(){

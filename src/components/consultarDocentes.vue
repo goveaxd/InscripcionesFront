@@ -27,7 +27,7 @@
 <div >
   
  
-    <b-table v-for="(item, index) in result" :key="index" striped hover :items="item" :fields="items"></b-table>
+    <b-table v-for="(item, index) in result" :key="index" striped hover :items="item" ></b-table>
   </div>
     </div>    
 </template>
@@ -42,7 +42,8 @@ export default {
           {key: 'nombre', sortable: true },
           {key: 'apellido', sortable: true },
           {key: 'RFC', sortable: true },
-          {key: 'mail', sortable: true }
+          {key: 'mail', sortable: true },
+          {key: 'departamento_iddepartamento', sortable: true} 
         ]
       
     }),

@@ -36,6 +36,7 @@
 import Board from './board';
 import Card from './card';
 import carga from './es';
+import axios from "axios";
 
 export default {
      data() {
@@ -53,6 +54,24 @@ export default {
     },
     components:{
         Board,Card,carga
+    },
+    created(){
+     // invocar los métodos
+     this.consultaMateriasCarga();
+    },
+     methods:{
+    async consultaMateriasCarga() {
+        try{
+            this.result = await axios.get("http://192.168.1.100:8081/tec/cargaAcademica/H/1")
+            console.log(this.result.data)
+            console.log(this.result.status)
+        
+
+
+        } catch(error) {
+            console.log(error)
+        }
+    }
     }
     
 }

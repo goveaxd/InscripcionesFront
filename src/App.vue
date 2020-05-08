@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <cDocentes></cDocentes>
-
+    <cargaAcademica></cargaAcademica>
 
   </div>
 </template>
@@ -14,7 +13,7 @@ import cMaterias from '@/components/consultarMateriasPCarrera'
 import prueba from '@/components/prueba'
 import navbar from '@/components/navbar'
 import kardex from '@/components/kardex.vue'
-import cargaAcademica from '@/components/cargaAcademica.vue'
+import cargaAcademica from '@/components/cargaAcademica'
 
 
 export default {
@@ -34,7 +33,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 #navbar{

@@ -50,6 +50,7 @@
 import cDocentes from '@/components/consultarDocentes'
 import cMaterias from '@/components/consultarMateriasPCarrera'
 import prueba from '@/components/prueba'
+import horario from '@/components/horario'
 
 import kardex from '@/components/kardex.vue'
 
@@ -58,7 +59,7 @@ export default {
   name: 'App',
   components: {
 
-    cDocentes,cMaterias,kardex,prueba
+    cDocentes,cMaterias,kardex,prueba,horario
 
   }
 }

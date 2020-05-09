@@ -39,7 +39,7 @@
     </b-collapse>
   </b-navbar>
 </div>
-    <kardex></kardex>
+    <horario></horario>
 
 
   </div>

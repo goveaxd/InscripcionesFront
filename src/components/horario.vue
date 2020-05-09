@@ -12,12 +12,12 @@
               <br>
               <h1><strong> HORARIO ! </strong></h1>
                  <div class="mt-5">
-            <!--  <b-table v-for="(item, index) in resultHorarioeMateria" :key="index" striped hover :items="item" ></b-table>-->
+             <b-table v-for="(item, index) in resultHorarioeMateria" :key="index" striped hover :items="item" ></b-table>
                  </div>
               
                <div class="mt-5" >
                  <thead class="thead-dark">
-            <!--  <b-table v-for="(item, index) in resultDocenteMateria" :key="index" striped hover :items="item" ></b-table>-->
+             <b-table v-for="(item, index) in resultDocenteMateria" :key="index" striped hover :items="item" ></b-table>
                  </thead>
                  </div>
             </b-container> 
@@ -43,13 +43,13 @@ import axios from "axios";
      // invocar los métodos
      this.consultaAlumno(),
      this.consultaDocenteMateria(),
-     this. consultaDocenteMateria()
+     this.consultaHorarioMateria()
     
     },
          methods:{
             async consultaHorarioMateria() {
       try{
-    this.resultHorarioeMateria = await axios.get("http://localhost:8585/tec/alumnos/info/1")
+    this.resultHorarioeMateria = await axios.get("http://localhost:8585/tec/materias/horarios/1")
     console.log(this.resultHorarioeMateria.data)
     console.log(this.resultHorarioeMateria.status)
   } catch(error) {
@@ -58,7 +58,7 @@ import axios from "axios";
     },
            async consultaDocenteMateria() {
       try{
-    this.resultDocenteMateria = await axios.get("http://localhost:8585/tec/docente/materia/1")
+    this.resultDocenteMateria = await axios.get("http://localhost:8585/tec/imparte/materia/1")
     console.log(this.resultDocenteMateria.data)
     console.log(this.resultDocenteMateria.status)
   } catch(error) {

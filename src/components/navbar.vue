@@ -11,7 +11,6 @@
         <b-nav-item href="#">Reinscripción</b-nav-item>
         <b-nav-item href="#">Kardex</b-nav-item>
         <b-nav-item href="#">Carga Academica</b-nav-item>
-        <b-nav-item href="#">Horario</b-nav-item>
        
       </b-navbar-nav>
 

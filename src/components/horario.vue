@@ -8,22 +8,22 @@
                   <b-avatar class="mr-7" variant="primary" text="DB" size="6rem"></b-avatar>
                 </div>
                 
-              <b-row>
-                <b-col>Daniel Belmonte Diaz</b-col>
-              </b-row>
-              <b-row>
-                <b-col>16640099</b-col>
-              </b-row>
-              <b-row>
-                <b-col>Ing Tecnologias de la Informacion y Comunicaciones</b-col>
-              </b-row>
+              <b-table v-for="(item, index) in resultAlumno" :key="index" striped hover :items="item" ></b-table>
               <br>
-              <h1><strong> HORARIO </strong></h1>
+              <h1><strong> HORARIO ! </strong></h1>
                  <div class="mt-5">
-              <b-table striped hover :items="items"></b-table>
+             <b-table v-for="(item, index) in resultHorarioeMateria" :key="index" striped hover :items="item" ></b-table>
+                 </div>
+              
+               <div class="mt-5" >
+                 <thead class="thead-dark">
+             <b-table v-for="(item, index) in resultDocenteMateria" :key="index" striped hover :items="item" ></b-table>
+                 </thead>
                  </div>
             </b-container> 
             
+            
+
 </div>
 
 
@@ -31,21 +31,49 @@
         
 </template>
 <script>
+import axios from "axios";
     export default {
-        data() {
-          return {
-            items: [
-              
-              {HORA: '7:00 - 8:00', LUNES:'Base de datos', MARTES:'Base de datos', MIERCOLES:'Base de datos',JUEVES:'DevOps', VIERNES:'Base de datos'},
-              {HORA: '8:00 - 9:00', LUNES:'DevOps', MARTES:'Base de datos', MIERCOLES:'DevOps', JUEVES:'DevOps', VIERNES:'Telecomunicaciones'},
-              {HORA: '9:00 - 10:00', LUNES:'Telecomunicaciones', MARTES:'Ing Software', MIERCOLES:'DevOps', JUEVES:'Ing Software', VIERNES:'Telecomunicaciones'},
-              {HORA: '10:00 - 11:00', LUNES:'Programacion II', MARTES:'Ing Software', MIERCOLES:'Telecomunicaciones', JUEVES:'Etica', VIERNES:'Programacion II'},
-              {HORA: '11:00 - 12:00', LUNES:'Programacion II', MARTES:'Programacion II', MIERCOLES:'Ing Software', JUEVES:'Front-End II', VIERNES:'Programacion II'},
-              {HORA: '12:00 - 13:00', LUNES:'Etica', MARTES:'Front-End II', MIERCOLES:'Etica', JUEVES:'Front-End II', VIERNES:'Etica'},
-              {HORA: '13:00 - 14:00', LUNES:'Front-End II', MARTES:'', MIERCOLES:'Back-End', JUEVES:'Back-End', VIERNES:''},
-              {HORA: '14:00 - 15:00', LUNES:'Front-End II', MARTES:'Back-End', MIERCOLES:'Back-End', JUEVES:'', VIERNES:'Back-End'},
-            ]
-          }
-        }
+      data:() => ({
+        resultAlumno:[],
+        resultDocenteMateria:[],
+        resultHorarioeMateria:[]
+      
+    }),
+    created(){
+     // invocar los métodos
+     this.consultaAlumno(),
+     this.consultaDocenteMateria(),
+     this.consultaHorarioMateria()
+    
+    },
+         methods:{
+            async consultaHorarioMateria() {
+      try{
+    this.resultHorarioeMateria = await axios.get("http://localhost:8585/tec/materias/horarios/1")
+    console.log(this.resultHorarioeMateria.data)
+    console.log(this.resultHorarioeMateria.status)
+  } catch(error) {
+    console.log(error)
+  }
+    },
+           async consultaDocenteMateria() {
+      try{
+    this.resultDocenteMateria = await axios.get("http://localhost:8585/tec/imparte/materia/1")
+    console.log(this.resultDocenteMateria.data)
+    console.log(this.resultDocenteMateria.status)
+  } catch(error) {
+    console.log(error)
+  }
+    },
+    async consultaAlumno() {
+      try{
+    this.resultAlumno = await axios.get("http://localhost:8585/tec/alumnos/info/1")
+    console.log(this.resultAlumno.data)
+    console.log(this.resultAlumno.status)
+  } catch(error) {
+    console.log(error)
+  }
+    }
+    }
     }
     </script>

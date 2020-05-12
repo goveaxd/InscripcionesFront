@@ -2,13 +2,13 @@
     <main class="flexbox">
         <center>
         <br>
-        <h1><strong> DOCENTES </strong></h1>
+        <h1><strong> Carga Academica</strong></h1>
         <label>{{nombre}}</label>
        <Board id="board-1" > 
-           <Card :id="mat.id" draggable="true" v-for="mat in materiasDisp" :key="mat.id">
+           <Card :id="mat.codigo_materia" draggable="true" v-for="mat in materiasDisp" :key="mat.id">
                 <table  class="table tab">
                     <tr>
-                        <td> {{mat.Creditos}}</td><td>{{mat.Clave}}</td><td>{{mat.Nombre}}</td>
+                        <td> {{mat.creditos}}</td><td>{{mat.codigo_materia}}</td><td>{{mat.nombre_materia}}</td>
                     </tr>
                 </table>
            </Card>
@@ -41,13 +41,7 @@ import axios from "axios";
 export default {
      data() {
       return {
-        materiasDisp:[
-          {id:1, Creditos:"12-11-23", Clave: "ERERT3534" , Nombre: 'Geografia'},
-          {id:2, Creditos:"23-11-56" , Clave: "DGE345" , Nombre: 'Psicología'},
-          {id:3,  Creditos:"11-23-76",Clave: "ERG345" , Nombre: 'Educacion fisica'},
-          {id:4,  Creditos:"11-23-76",Clave: "ERG345" , Nombre: 'Educacion fisica'},
-          {id:5,  Creditos:"11-23-76",Clave: "ERG345" , Nombre: 'Educacion fisica'},
-        ],
+         materiasDisp:[],
        
         nombre: "Jorge Samuel Manrriquez Elias"
       }
@@ -62,12 +56,8 @@ export default {
      methods:{
     async consultaMateriasCarga() {
         try{
-            this.result = await axios.get("http://192.168.1.100:8081/tec/cargaAcademica/H/1")
-            console.log(this.result.data)
-            console.log(this.result.status)
-        
-
-
+            let result = await axios.get("http://192.168.1.100:8585/tec/cargaAcademica/hfjks/H/1")
+           this.materiasDisp=result.data;
         } catch(error) {
             console.log(error)
         }
@@ -115,6 +105,7 @@ export default {
 }
 .tab{
 font-size: 12px;
+max-width: 400px;
 }
 
 .tab tr td{

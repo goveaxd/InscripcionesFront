@@ -10,7 +10,7 @@
                 
               <b-table v-for="(item, index) in resultAlumno" :key="index" striped hover :items="item" ></b-table>
               <br>
-              <h1><strong> HORARIO ! </strong></h1>
+              <h1><strong> HORARIO </strong></h1>
                  <div class="mt-5">
              <b-table v-for="(item, index) in resultHorarioeMateria" :key="index" striped hover :items="item" ></b-table>
                  </div>

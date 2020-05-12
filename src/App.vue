@@ -40,7 +40,7 @@
     </b-collapse>
   </b-navbar>
 </div>
-    <horario></horario>
+    <consultaCarreras></consultaCarreras>
 
 
 
@@ -54,6 +54,7 @@ import cMaterias from '@/components/consultarMateriasPCarrera'
 import prueba from '@/components/prueba'
 
 import horario from '@/components/horario'
+import consultaCarreras from '@/components/consultaCarreras'
 
 
 import kardex from '@/components/kardex.vue'
@@ -65,7 +66,7 @@ export default {
   components: {
 
 
-    cDocentes,cMaterias,kardex,prueba,horario
+    cDocentes,cMaterias,kardex,prueba,horario, consultaCarreras
 
 
   }

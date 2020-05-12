@@ -1,6 +1,6 @@
 <template>
      <div>
-  <b-navbar class="m" toggleable="lg" type="dark" variant="" >
+  <b-navbar class="m" toggleable="lg" type="dark" variant="primary" >
     <b-navbar-brand href="#">ITLP</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -9,6 +9,8 @@
       <b-navbar-nav>
         <b-nav-item href="#">Inicio</b-nav-item>
         <b-nav-item href="#">Reinscripción</b-nav-item>
+        <b-nav-item href="#">Kardex</b-nav-item>
+        <b-nav-item href="#">Carga Academica</b-nav-item>
        
       </b-navbar-nav>
 

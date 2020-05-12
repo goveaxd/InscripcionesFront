@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
      <div>
   <b-navbar class="m" toggleable="lg" type="dark" variant="primary" >
     <b-navbar-brand href="#">ITLP</b-navbar-brand>
@@ -12,7 +13,6 @@
         <b-nav-item href="#">Reinscripción</b-nav-item>
         <b-nav-item href="#">Kardex</b-nav-item>
         <b-nav-item href="#">Carga Academica</b-nav-item>
-        <b-nav-item href="#">Horario</b-nav-item>
        
       </b-navbar-nav>
 
@@ -43,23 +43,30 @@
     <horario></horario>
 
 
+
   </div>
 </template>
 
 <script>
-import menu from '@/components/menu'
+
 import cDocentes from '@/components/consultarDocentes'
 import cMaterias from '@/components/consultarMateriasPCarrera'
+import prueba from '@/components/prueba'
+
 import horario from '@/components/horario'
 
+
 import kardex from '@/components/kardex.vue'
+import cargaAcademica from '@/components/cargaAcademica'
 
 
 export default {
   name: 'App',
   components: {
 
-    menu,cDocentes,cMaterias,kardex, horario
+
+    cDocentes,cMaterias,kardex,prueba,horario
+
 
   }
 }
@@ -72,7 +79,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 #navbar{

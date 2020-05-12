@@ -56,7 +56,7 @@ export default {
      methods:{
     async consultaMateriasCarga() {
         try{
-            let result = await axios.get("http://192.168.1.100:8585/tec/cargaAcademica/hfjks/H/1")
+            let result = await axios.get("http://localhost:8585/tec/cargaAcademica/hfjks/H/1")
            this.materiasDisp=result.data;
         } catch(error) {
             console.log(error)

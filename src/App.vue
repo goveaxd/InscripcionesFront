@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <cargaAcademica></cargaAcademica>
+    <comprobacionPago></comprobacionPago>
 
 
-
+    
   </div>
+ 
 </template>
 
 <script>
@@ -19,12 +20,13 @@ import consultaCarreras from '@/components/consultaCarreras'
 import kardex from '@/components/kardex.vue'
 import cargaAcademica from '@/components/cargaAcademica'
 import navbar from '@/components/navbar'
-
+import reinscripcionTerminada from '@/components/reinscripcionTerminada'
+import comprobacionPago from '@/components/comprobacionPago'
 
 export default {
   name: 'App',
   components: {
-    cDocentes,cMaterias,kardex,prueba,horario, consultaCarreras,cargaAcademica,navbar
+    cDocentes,cMaterias,kardex,prueba,horario, consultaCarreras,cargaAcademica,navbar, reinscripcionTerminada, comprobacionPago
   }
 }
 </script>

@@ -41,7 +41,7 @@ import axios from "axios";
 export default {
      data() {
       return {
-         materiasDisp:[ ],
+         materiasDisp:[],
        
         nombre: "Jorge Samuel Manrriquez Elias"
       }
@@ -58,9 +58,6 @@ export default {
         try{
             let result = await axios.get("http://192.168.1.100:8585/tec/cargaAcademica/hfjks/H/1")
            this.materiasDisp=result.data;
-        
-
-
         } catch(error) {
             console.log(error)
         }

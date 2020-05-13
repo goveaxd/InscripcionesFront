@@ -1,4 +1,5 @@
 <template>
+
      <div>
   <b-navbar class="m" toggleable="lg" type="dark" variant="primary" >
     <b-navbar-brand href="#">ITLP</b-navbar-brand>

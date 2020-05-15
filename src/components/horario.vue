@@ -16,13 +16,18 @@
                
             <!--  <b-table v-for="(item, index) in resultAlumno" :key="index" striped hover :items="item" ></b-table>-->
               <br>
+
               <h1><strong> HORARIO ! </strong></h1>
              
                 
               <!--<li v-for="(materiaHorario, index) in  resultHorarioeMateria.data" :key="index">-->
                           
                  <div  class="mt-5">
-                 <b-table v-for="(item, index) in resultHorarioeMateria" :key="index"  striped hover :items="item" ></b-table>
+
+              <h1><strong> HORARIO </strong></h1>
+                 <div class="mt-5">
+             <b-table v-for="(item, index) in resultHorarioeMateria" :key="index" striped hover :items="item" ></b-table>
+
                  </div>
               
                <div class="mt-5" >
@@ -35,9 +40,6 @@
             
 
 </div>
-
-
-
         
 </template>
 <script>

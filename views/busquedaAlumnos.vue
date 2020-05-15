@@ -25,8 +25,8 @@
       <td>16640099</td>
       <td>8vo</td>
       <td>Ing Tecnologías de la Información y Comunicaciones</td>
-      <td><button type="button" class="btn btn-outline-info">Ver Carga</button></td>
-      <td><button type="button" class="btn btn-outline-info">Ver Kárdex</button></td>
+      <td><router-link to="/cargaAcademica"><button type="button" class="btn btn-outline-info">Ver Carga</button></router-link></td>
+      <td><router-link to="/kardex"><button type="button" class="btn btn-outline-info" >Ver Kárdex</button></router-link></td>
     </tr>
   </tbody>
 </table>

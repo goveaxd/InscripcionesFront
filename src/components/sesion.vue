@@ -5,40 +5,50 @@
     <div class="mb-4 mt-3" >
     <b-avatar class="mr-7" variant="primary" text="ITLP" size="6rem"></b-avatar>
     </div>
-    <form class="needs-validation" novalidate> <center>
+    <div class="needs-validation" novalidate> <center>
         
   <div class="form-group">
-    <label for="validationCustom01">Número de Control</label> <br>
-    <input type="text"  id="validationCustom01" placeholder="NoControl">
+    <label for="validationCustom01" >Número de Control</label> <br>
+    <input type="number" v-model="noControl" id="validationCustom01" placeholder="NoControl">
     </div>
   <div class="form-group">
     <label>Contraseña</label><br>
-    <input type="password" id="exampleInputPassword1" placeholder="Contraseña">
+    <input type="password" v-model="password" id="exampleInputPassword1" placeholder="Contraseña">
   </div>
-  
-  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+  <button type="submit" class="btn btn-primary" @click="botonEnviar">Iniciar Sesión</button>
   </center>
-</form>
+</div>
+
 </div>
 </template>
 
 <script>
-// Example starter JavaScript for disabling form submissions if there are invalid 
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
+import axios from "axios";
+
+
+  export default {
+    data(){
+      return{
+        noControl:"",
+        password:""
+      }
+    },
+    methods:{
+      botonEnviar(){
+        if(this.noControl.length>0 && this.password.length>0){
+          this.consultaDocentes();
+        }else{alert("Llene todos los campos por favor")}
+      },
+      async consultaDocentes() {
+        try{
+          this.result = await axios.get(`http://localhost:8181/tec/sesion/${this.noControl}/${this.password}`)
+          alert(this.result.data)
+        } catch(error) {
+          alert("Error de conexión")
+            console.log(error)
         }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+      }
+      
+    }
+  }
 </script>

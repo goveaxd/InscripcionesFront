@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <busquedaAlumnos></busquedaAlumnos>
+    <sesion></sesion>
     
   </div>
  

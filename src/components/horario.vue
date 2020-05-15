@@ -6,18 +6,28 @@
             <b-container align="center" fluid class="ml-5">
                 <div class="mb-4 mt-3" >
                   <b-avatar class="mr-7" variant="primary" text="DB" size="6rem"></b-avatar>
+                 
                 </div>
-                
-              <b-table v-for="(item, index) in resultAlumno" :key="index" striped hover :items="item" ></b-table>
+                  Nombre: {{resultAlumno.data[0].nombre}}
+                   {{resultAlumno.data[0].apellidos}}
+                   <br>
+                    Número de Control: {{resultAlumno.data[0].noControl}}
+                    <br>
+               
+            <!--  <b-table v-for="(item, index) in resultAlumno" :key="index" striped hover :items="item" ></b-table>-->
               <br>
               <h1><strong> HORARIO ! </strong></h1>
-                 <div class="mt-5">
-             <b-table v-for="(item, index) in resultHorarioeMateria" :key="index" striped hover :items="item" ></b-table>
+             
+                
+              <!--<li v-for="(materiaHorario, index) in  resultHorarioeMateria.data" :key="index">-->
+                          
+                 <div  class="mt-5">
+                 <b-table v-for="(item, index) in resultHorarioeMateria" :key="index"  striped hover :items="item" ></b-table>
                  </div>
               
                <div class="mt-5" >
                  <thead class="thead-dark">
-             <b-table v-for="(item, index) in resultDocenteMateria" :key="index" striped hover :items="item" ></b-table>
+            <b-table v-for="(item, index) in resultDocenteMateria" :key="index" striped hover :items="item" ></b-table>
                  </thead>
                  </div>
             </b-container> 

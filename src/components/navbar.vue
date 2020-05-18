@@ -8,10 +8,16 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Inicio</b-nav-item>
-        <b-nav-item href="#">Reinscripción</b-nav-item>
-        <b-nav-item href="#">Kardex</b-nav-item>
-        <b-nav-item href="#">Carga Academica</b-nav-item>
+        <b-nav-item href="#" exact to="/inicio">Inicio</b-nav-item>
+        <b-nav-item href="#" exact to="/pago">Pago</b-nav-item>
+        <b-nav-item href="#" exact to="/kardex">Kardex</b-nav-item>
+        <b-nav-item href="#" exact to="/cargaAcademica">Carga Academica</b-nav-item>
+        <b-nav-item href="#" exact to="/docentes">Docentes</b-nav-item>
+        <b-nav-item href="#" exact to="/materias">Materias</b-nav-item>
+        <b-nav-item href="#" exact to="/busquedaAlumnos">Busqueda Alumno</b-nav-item>
+        <b-nav-item href="#" exact to="/carreras">Carreras</b-nav-item>
+        <b-nav-item href="#" exact to="/horario">Horario</b-nav-item>
+        
        
       </b-navbar-nav>
 
@@ -32,7 +38,7 @@
           <template v-slot:button-content>
             <em>User</em>
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
+          <b-dropdown-item href="#" xact to="/inicio">Sign In</b-dropdown-item>
           <b-dropdown-item href="#">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>

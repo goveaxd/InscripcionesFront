@@ -27,7 +27,7 @@
             </tr>
         </table>
         </center>
- <img src='../../sources/save_icon.png' class = "flotante"/>
+
        
        </main>
 </template>

@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <router-view/>
 
+    <session v-if="contenInSession()==false"></session>
+    <navbar v-if="contenInSession()"></navbar>
+    <router-view v-if="contenInSession()"/>
     
   </div>
  
@@ -11,12 +12,22 @@
 <script>
 
 import navbar from '@/components/navbar'
+import session from '@/components/sesion'
 export default {
   name: 'App',
   components: {
-   navbar
-    
+   navbar,session
+  },
+   methods:{
+      contenInSession(){
+        const dataUser=localStorage.dataUser;
+        try{
+        if(dataUser.length>0)return true
+        }catch{}
+        return false;
+      }
   }
+  
 }
 </script>
 

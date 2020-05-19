@@ -36,10 +36,10 @@ import axios from "axios";
     methods:{
       botonEnviar(){
         if(this.noControl.length>0 && this.password.length>0){
-          this.consultaDocentes();
+          this.IniciarSesion();
         }else{alert("Llene todos los campos por favor")}
       },
-      async consultaDocentes() {
+      async IniciarSesion() {
         try{
           this.result = await axios.get(`http://localhost:8181/tec/sesion/${this.noControl}/${this.password}`)
           alert(this.result.data) 

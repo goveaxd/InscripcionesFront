@@ -42,9 +42,15 @@ import axios from "axios";
       async consultaDocentes() {
         try{
           this.result = await axios.get(`http://localhost:8181/tec/sesion/${this.noControl}/${this.password}`)
-          alert(this.result.data)
+          alert(this.result.data) 
+
+          if(this.result.data.split(" ")[0]=="Bienvenido"){
+            const dataUser=[{"noControl":this.noControl,"password":this.password}];
+            localStorage.setItem("dataUser",dataUser);
+            location.reload();
+          }
         } catch(error) {
-          alert("Error de conexión")
+          alert(error)
             console.log(error)
         }
       }

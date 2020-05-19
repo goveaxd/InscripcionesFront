@@ -5,11 +5,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
   const routes = [
-  {
-    path: '/inicio',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "Home" */ '../views/sesion.vue')
-  },
+    {
+      path: '/',
+      name: 'login',
+      redirect:'pago'
+    },
   {
     path: '/kardex',
     name: 'kardex',

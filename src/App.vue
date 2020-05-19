@@ -1,36 +1,33 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <sesion></sesion>
+
+    <session v-if="contenInSession()==false"></session>
+    <navbar v-if="contenInSession()"></navbar>
+    <router-view v-if="contenInSession()"/>
     
   </div>
  
 </template>
 
 <script>
-import busquedaAlumnos from '@/components/busquedaAlumnos'
-import cDocentes from '@/components/consultarDocentes'
-import cMaterias from '@/components/consultarMateriasPCarrera'
-import prueba from '@/components/prueba'
-import sesion from '@/components/sesion'
-import horario from '@/components/horario'
-import consultaCarreras from '@/components/consultaCarreras'
-import kardex from '@/components/kardex.vue'
-import cargaAcademica from '@/components/cargaAcademica'
-import navbar from '@/components/navbar'
-import reinscripcionTerminada from '@/components/reinscripcionTerminada'
-import comprobacionPago from '@/components/comprobacionPago'
 
+import navbar from '@/components/navbar'
+import session from '@/components/sesion'
 export default {
   name: 'App',
   components: {
-    cDocentes, cMaterias,
-    kardex, prueba, busquedaAlumnos,
-    horario, consultaCarreras,
-    cargaAcademica, navbar, 
-    reinscripcionTerminada, comprobacionPago,
-    sesion
+   navbar,session
+  },
+   methods:{
+      contenInSession(){
+        const dataUser=localStorage.dataUser;
+        try{
+        if(dataUser.length>0)return true
+        }catch{}
+        return false;
+      }
   }
+  
 }
 </script>
 

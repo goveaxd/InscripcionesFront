@@ -27,7 +27,7 @@
             </tr>
         </table>
         </center>
- <img src='../../sources/save_icon.png' class = "flotante"/>
+
        
        </main>
 </template>
@@ -56,7 +56,7 @@ export default {
      methods:{
     async consultaMateriasCarga() {
         try{
-            let result = await axios.get("http://localhost:8585/tec/cargaAcademica/hfjks/H/1")
+            let result = await axios.get("http://localhost:8181/tec/cargaAcademica/hfjks/H/1")
            this.materiasDisp=result.data;
         } catch(error) {
             console.log(error)

@@ -44,7 +44,7 @@ export default {
     methods:{
     async consultaDocentes() {
       try{
-    this.result = await axios.get("http://localhost:8181/tec/docente")
+    this.result = await axios.get("http://localhost:8585/tec/docente")
     console.log(this.result.data)
     console.log(this.result.status)
     

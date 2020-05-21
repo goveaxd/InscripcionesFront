@@ -42,10 +42,9 @@ import axios from "axios";
       async IniciarSesion() {
         try{
           this.result = await axios.get(`http://localhost:8585/tec/sesion/${this.noControl}/${this.password}`)
-          alert(this.result.data) 
 
-          if(this.result.data.split(" ")[0]=="Bienvenido"){
-            const dataUser={"noControl":this.noControl,"password":this.password};
+          if(this.result.data>0){
+            const dataUser={"noControl":this.noControl,"password":this.password,"idAlumno":this.result.data};
             localStorage.setItem("dataUser",JSON.stringify(dataUser));
             location.reload();
           }

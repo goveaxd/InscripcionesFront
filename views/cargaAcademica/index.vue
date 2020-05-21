@@ -96,8 +96,10 @@ export default {
                     }).catch(error => {
 
                     }).then(response => {
+
                         alert("Carga Academica Agregada")
                         localStorage.removeItem("matAgreg")
+                        
                     });
             }
         }

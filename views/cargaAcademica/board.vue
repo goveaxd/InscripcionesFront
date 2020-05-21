@@ -16,6 +16,7 @@ export default {
             const card_id = e.dataTransfer.getData('card_id');
             const card = document.getElementById(card_id);
             e.target.appendChild(card);
+            alert(card_id); 
         }
     }
 }

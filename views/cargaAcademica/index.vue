@@ -5,7 +5,7 @@
         <h1><strong> Carga Academica</strong></h1>
         <label>{{nombre}}</label>
        <Board id="board-1" > 
-           <Card :id="mat.codigo_materia" draggable="true" v-for="mat in materiasDisp" :key="mat.id">
+           <Card :id="mat.idmaterias" draggable="true" v-for="mat in materiasDisp" :key="mat.idmaterias">
                 <table  class="table tab">
                     <tr>
                         <td> {{mat.creditos}}</td><td>{{mat.codigo_materia}}</td><td>{{mat.nombre_materia}}</td>
@@ -42,7 +42,7 @@ export default {
      data() {
       return {
          materiasDisp:[],
-       
+         seleccionado:[],
         nombre: "Jorge Samuel Manrriquez Elias"
       }
     },
@@ -56,7 +56,7 @@ export default {
      methods:{
     async consultaMateriasCarga() {
         try{
-            let result = await axios.get("http://localhost:8181/tec/cargaAcademica/hfjks/H/1")
+            let result = await axios.get("http://localhost:8585/tec/cargaAcademica/hfjks/H/1")
            this.materiasDisp=result.data;
         } catch(error) {
             console.log(error)

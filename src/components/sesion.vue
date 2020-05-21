@@ -41,12 +41,12 @@ import axios from "axios";
       },
       async IniciarSesion() {
         try{
-          this.result = await axios.get(`http://localhost:8181/tec/sesion/${this.noControl}/${this.password}`)
+          this.result = await axios.get(`http://localhost:8585/tec/sesion/${this.noControl}/${this.password}`)
           alert(this.result.data) 
 
           if(this.result.data.split(" ")[0]=="Bienvenido"){
-            const dataUser=[{"noControl":this.noControl,"password":this.password}];
-            localStorage.setItem("dataUser",dataUser);
+            const dataUser={"noControl":this.noControl,"password":this.password};
+            localStorage.setItem("dataUser",JSON.stringify(dataUser));
             location.reload();
           }
         } catch(error) {

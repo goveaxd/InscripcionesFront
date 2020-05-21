@@ -47,6 +47,11 @@ import axios from "axios";
             const dataUser={"noControl":this.noControl,"password":this.password,"idAlumno":this.result.data};
             localStorage.setItem("dataUser",JSON.stringify(dataUser));
             location.reload();
+
+          }else{
+            
+            alert("Numero de control incorrecto");
+            
           }
         } catch(error) {
           alert(error)

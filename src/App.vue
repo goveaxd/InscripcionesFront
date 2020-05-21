@@ -20,8 +20,8 @@ export default {
   },
    methods:{
       contenInSession(){
-        const dataUser=JSON.parse(localStorage.dataUser);
         try{
+        const dataUser=JSON.parse(localStorage.dataUser);
         if(dataUser.noControl>0)return true
         }catch{}
         return false;

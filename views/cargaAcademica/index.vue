@@ -53,12 +53,12 @@ export default {
      // invocar los métodos
      localStorage.removeItem("matAgreg");
       this.consultarDatosAlumno();
-     this.consultaMateriasCarga();
+     this.consultaMateriasCarga(this.consultarDatosAlumno());
     },
      methods:{
-    async consultaMateriasCarga() {
+    async consultaMateriasCarga(idAlumno) {
         try{
-            let result = await axios.get("http://localhost:8585/tec/cargaAcademica/hfjks/H/1")
+            let result = await axios.get(`http://localhost:8585/tec/cargaAcademica/hfjks/H/${idAlumno}`)
            this.materiasDisp=result.data;
         } catch(error) {
             console.log(error)

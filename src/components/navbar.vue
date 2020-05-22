@@ -14,7 +14,6 @@
         <b-nav-item href="#" exact to="/docentes">Docentes</b-nav-item>
         <b-nav-item href="#" exact to="/materias">Materias</b-nav-item>
         <b-nav-item href="#" exact to="/busquedaAlumnos">Busqueda Alumno</b-nav-item>
-        <b-nav-item href="#" exact to="/carreras">Carreras</b-nav-item>
         <b-nav-item href="#" exact to="/horario">Horario</b-nav-item>
        
       </b-navbar-nav>

@@ -31,14 +31,14 @@ export default {
       
     }),
     created(){
-     // invocar los métodos
-     this.consultaAlumno()
-     this.consultaKardex()
+    
+     this.consultaAlumno(this.getIdAlumno())
+     this.consultaKardex(this.getIdAlumno())
     },
     methods:{
-    async consultaAlumno() {
+    async consultaAlumno(idAlumno) {
       try{
-    this.resultAlumno = await axios.get("http://localhost:8585/tec/alumnos/info/1")
+    this.resultAlumno = await axios.get(`http://localhost:8585/tec/alumnos/info/${idAlumno}`)
     console.log(this.resultAlumno.data)
     console.log(this.resultAlumno.status)
   } catch(error) {
@@ -48,12 +48,18 @@ export default {
 
     async consultaKardex(idAlumno) {
       try{
-    this.resultKardex = await axios.get("http://localhost:8585/tec/kardex/materias/1")
+    this.resultKardex = await axios.get(`http://localhost:8585/tec/kardex/materias/${idAlumno}`)
     console.log(this.resultKardex.data)
     console.log(this.resultKardex.status)
   } catch(error) {
     console.log(error)
   }
+    },
+    getIdAlumno(){
+      const dataUser=JSON.parse(localStorage.dataUser);
+        const idAlumnoF = dataUser.idAlumno;
+        
+      return idAlumnoF;
     }
     }
 }

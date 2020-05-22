@@ -54,10 +54,6 @@ export default {
   } catch(error) {
     console.log(error)
   }
-    },
-    listen(event){
-     console.log(event)
-    
     }
     }
 }

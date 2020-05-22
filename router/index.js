@@ -41,12 +41,6 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "busquedaAlumnos" */ '../views/busquedaAlumnos.vue')
   },
   {
-    path: '/carreras',
-    name: 'carreras',
-  
-    component: () => import(/* webpackChunkName: "carreras" */ '../views/consultaCarreras.vue')
-  },
-  {
     path: '/horario',
     name: 'horario',
   

@@ -3,7 +3,7 @@
         <center>
         <br>
         <h1><strong> Carga Academica</strong></h1>
-        <label>{{nombre}}</label>
+        <label>{{alumno.nombre}} {{alumno.apellidos}}</label>
        <Board id="board-1" > 
            <Card :id="mat.idmaterias" draggable="true" v-for="mat in materiasDisp" :key="mat.idmaterias">
                 <table  class="table tab">
@@ -28,7 +28,7 @@
         </table>
         </center>
 
-       
+       <button @click="insertarCarga()">Insertar Carga</button>
        </main>
 </template>
 
@@ -43,7 +43,7 @@ export default {
       return {
          materiasDisp:[],
          seleccionado:[],
-        nombre: "Jorge Samuel Manrriquez Elias"
+         alumno:{}
       }
     },
     components:{
@@ -51,6 +51,8 @@ export default {
     },
     created(){
      // invocar los métodos
+     localStorage.removeItem("matAgreg");
+      this.consultarDatosAlumno();
      this.consultaMateriasCarga();
     },
      methods:{
@@ -61,7 +63,49 @@ export default {
         } catch(error) {
             console.log(error)
         }
+    },
+    async consultarDatosAlumno() {
+        try{
+            let result1 = await axios.get(`http://localhost:8585/tec/alumno/${JSON.parse(localStorage.dataUser).idAlumno}`)
+           this.alumno=result1.data;
+        } catch(error) {
+            alert(error)
+        }
+    },
+     insertarCarga(){
+        let  matAgreg={}
+         try{
+            matAgreg=JSON.parse(localStorage.matAgreg)
+        }catch{}
+        
+        if(matAgreg.length>0){
+            for(let i=0;i<matAgreg.length;i++){
+                let idAlumno=this.alumno.idAlumno
+    
+                axios({
+                    method: 'post',
+                    url: 'http://localhost:8585/tec/cargaAcademica',
+                    data: {
+                        semestre_idsemestre:1,
+                        materias_idmaterias: matAgreg[i],
+                        alumnos_idAlumno: idAlumno
+                    },
+                    validateStatus: (status) => {
+                        return true; // I'm always returning true, you may want to do it depending on the status received
+                    },
+                    }).catch(error => {
+
+                    }).then(response => {
+
+                        alert("Carga Academica Agregada")
+                        localStorage.removeItem("matAgreg")
+                        
+                    });
+            }
+        }
     }
+
+
     }
     
 }

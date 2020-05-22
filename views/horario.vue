@@ -53,38 +53,44 @@ import axios from "axios";
     }),
     created(){
      // invocar los métodos
-     this.consultaAlumno(),
-     this.consultaDocenteMateria(),
-     this.consultaHorarioMateria()
+     this.consultaAlumno(this.getIdAlumno()),
+     this.consultaDocenteMateria(this.getIdAlumno()),
+     this.consultaHorarioMateria(this.getIdAlumno())
     
     },
          methods:{
-            async consultaHorarioMateria() {
+            async consultaHorarioMateria(idAlumno) {
       try{
-    this.resultHorarioeMateria = await axios.get("http://localhost:8585/tec/materias/horarios/1")
+    this.resultHorarioeMateria = await axios.get(`http://localhost:8585/tec/materias/horarios/${idAlumno}`)
     console.log(this.resultHorarioeMateria.data)
     console.log(this.resultHorarioeMateria.status)
   } catch(error) {
     console.log(error)
   }
     },
-           async consultaDocenteMateria() {
+           async consultaDocenteMateria(idAlumno) {
       try{
-    this.resultDocenteMateria = await axios.get("http://localhost:8585/tec/imparte/materia/1")
+    this.resultDocenteMateria = await axios.get(`http://localhost:8585/tec/imparte/materia/${idAlumno}`)
     console.log(this.resultDocenteMateria.data)
     console.log(this.resultDocenteMateria.status)
   } catch(error) {
     console.log(error)
   }
     },
-    async consultaAlumno() {
+    async consultaAlumno(idAlumno) {
       try{
-    this.resultAlumno = await axios.get("http://localhost:8585/tec/alumnos/info/1")
+    this.resultAlumno = await axios.get(`http://localhost:8585/tec/alumnos/info/${idAlumno}`)
     console.log(this.resultAlumno.data)
     console.log(this.resultAlumno.status)
   } catch(error) {
     console.log(error)
   }
+    },
+    getIdAlumno(){
+      const dataUser=JSON.parse(localStorage.dataUser);
+        const idAlumnoF = dataUser.idAlumno;
+        
+      return idAlumnoF;
     }
     }
     }

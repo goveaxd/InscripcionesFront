@@ -15,8 +15,7 @@
       <th scope="col">NoControl</th>
       <th scope="col">Semestre</th>
       <th scope="col">Carrera</th>
-      <th scope="col">Carga</th>
-      <th scope="col">Kárdex</th>
+  
     </tr>
   </thead>
   <tbody>
@@ -26,8 +25,7 @@
       <td>{{resultAlumno.data.noControl}}</td>
       <td>8vo</td>
       <td>Ing Tecnologías de la Información y Comunicaciones</td>
-      <td><router-link to="/cargaAcademica"><button type="button" class="btn btn-outline-info">Ver Carga</button></router-link></td>
-      <td><router-link to="/kardex"><button type="button" class="btn btn-outline-info" >Ver Kárdex</button></router-link></td>
+     
     </tr>
   </tbody>
 </table>
